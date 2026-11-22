@@ -1,0 +1,15 @@
+{
+  "appId": "com.serrant.gymneat",
+  "appName": "Gymneat",
+  "webDir": "www",
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "native",
+      "initialViewportFitValueHint": "cover"
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_gymneat",
+      "iconColor": "#1F45D1"
+    }
+  }
+}

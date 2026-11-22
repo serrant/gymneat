@@ -1,0 +1,27 @@
+{
+  "name": "gymneat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal gym tracker for Android. Plain HTML, CSS and JavaScript modules, packed as an app with Capacitor.",
+  "author": "serrant",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test \"tests/*.test.js\"",
+    "sync": "node scripts/copy-web.js && cap sync android",
+    "open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.6.2",
+    "@capacitor/filesystem": "8.1.5",
+    "@capacitor/haptics": "8.0.2",
+    "@capacitor/local-notifications": "8.3.1",
+    "@capacitor/share": "8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}
