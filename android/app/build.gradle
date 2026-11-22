@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Both version numbers come from VERSION in js/version.js (MAJOR.MINOR), the one source of truth:
+// versionName is VERSION itself, as shown in Trends → Data, and versionCode, which Google Play
+// requires to go up with every upload, is MAJOR * 1000 + MINOR (1.0 → 1000, 1.1 → 1001, 2.0 → 2000).
+// Change the version there, not here.
+def appVersion = (file('../../js/version.js').text =~ /VERSION = '([^']+)'/)[0][1]
+def versionParts = appVersion.tokenize('.')
+if (versionParts.size() != 2 || !versionParts.every { it.isInteger() } || (versionParts[1] as int) > 999) {
+    throw new GradleException("js/version.js: VERSION must be MAJOR.MINOR, such as '1.2' (minor up to 999), not '$appVersion'")
+}
+def appVersionCode = (versionParts[0] as int) * 1000 + (versionParts[1] as int)
+
 android {
     namespace = "com.serrant.gymneat"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +18,8 @@ android {
         applicationId "com.serrant.gymneat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode
+        versionName appVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

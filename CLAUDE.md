@@ -56,7 +56,7 @@ What each file and folder is for: **read [docs/project-structure.md](docs/projec
 
 ## Releasing
 
-1. Bump `VERSION` in `js/version.js` (format `YYYY-MM-DD.N`) and `versionCode` / `versionName` in `android/app/build.gradle`.
+1. Bump `VERSION` in `js/version.js` (format `MAJOR.MINOR`, started at `1.0`: bump MINOR for every release, MAJOR for big changes). It is the only place the version is set: `android/app/build.gradle` reads it as `versionName` and derives `versionCode` as MAJOR × 1000 + MINOR, so every upload to Google Play needs a higher `VERSION`.
 2. Update the README, `docs/data.md` or `docs/tech.md` if behaviour, the data format or the tools changed.
 3. Run `npm run sync`, then build a signed bundle (`.aab`) in Android Studio.
 4. Store images in `store/` show real screens; regenerate them with `store/make.py` when the interface changes.
