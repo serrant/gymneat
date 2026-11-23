@@ -21,7 +21,7 @@ export function vLegal() {
   const { kind, text } = ui.legal; // text is loaded by loadLegal() in io.js; null until it arrives
   const body = kind === 'privacy'
     ? (text == null ? '' : `<div class="doc">${doc(text)}</div>`)
-    : `<p class="legal-intro">Gymneat © 2026 serrant. Free software under the GNU General Public License version 3: you may share and change it under the same terms. It comes with no warranty.</p>
+    : `<p class="legal-intro">Free software under the GNU General Public License version 3: you may share and change it under the same terms. It comes with no warranty.</p>
        ${text == null ? '' : `<pre class="legal">${esc(text)}</pre>`}`;
   return `<div class="sheet" role="dialog" aria-label="${TITLES[kind]}">
     <div class="sheet-head"><h2 class="grow">${TITLES[kind]}</h2><button class="btn sm pri" data-a="legalclose">Done</button></div>

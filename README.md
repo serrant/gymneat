@@ -34,7 +34,20 @@ The app is plain HTML, CSS and JavaScript modules (no bundler, no framework) at 
 ## Run on the web
 
 - **On your computer:** `npm start` (or `python3 -m http.server 8000`), then open http://localhost:8000. Opening `index.html` directly shows a blank page, because browsers only load JavaScript modules over HTTP.
-- **On GitHub Pages:** in the repository, go to **Settings → Pages**, deploy from `main`, root. Open `https://<your-username>.github.io/<repo-name>/` on your phone and add it to the home screen.
+- **On GitHub Pages:** in the repository, go to **Settings → Pages**, deploy from `main`, root. The app is then at `https://<your-username>.github.io/<repo-name>/`.
+
+### Install it on a phone from the web
+
+Open that address in Chrome on Android, then **⋮ → Add to home screen → Install** (older versions: **⋮ → Install app**). It gets the app's icon and opens full screen, without the browser's address bar. *Create shortcut*, in the same dialog, only makes a bookmark that opens in a browser tab.
+
+### Limits of the web version
+
+The same code runs in both places, but these need the Android app:
+
+- **No rest notification.** Leave the app during a rest and nothing tells you it ended: without a server, a browser cannot schedule a notification for later. The rest still beeps while the app is on screen.
+- **It needs a connection to start.** The files are fetched each time it opens; after that it sends nothing. The Android app carries them inside it and never needs a connection at all.
+- **Backups are copy-only.** *Export* writes a file through Android's share menu; on the web there is only *Copy JSON*, which you paste somewhere yourself.
+- **The data is easier to lose.** Clearing the browser's site data deletes it, and a phone short of space may evict it on its own. App data lasts until you uninstall the app or clear its storage, and Android can include it in your Google backup.
 
 ## Run on Android
 
