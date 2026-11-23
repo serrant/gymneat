@@ -4,9 +4,8 @@ import { canDownload } from '../../io.js';
 import { VERSION } from '../../version.js';
 import { icon } from '../icons.js';
 
-// The licence notice (GPL-3.0 §5(d)): "GPL-3.0" opens the licences sheet, which carries the copyright
-// line, the no-warranty statement, the licence text and the third-party notices — one tap away is still
-// the "convenient and prominently visible feature" the licence asks for, so keep this button.
+// "GPL-3.0" opens the licences sheet: the no-warranty statement, the licence text, and the notices of
+// the open-source parts the app ships, which their licences require. Keep this button.
 // "Privacy" opens the privacy policy (PRIVACY.md), which Google Play requires inside the app.
 const NOTICE = '<button class="lnk" data-a="legal" data-k="licences">GPL-3.0</button>'
   + ' · <button class="lnk" data-a="legal" data-k="privacy">Privacy</button>';

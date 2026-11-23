@@ -1,11 +1,5 @@
 # Privacy policy
 
-Gymneat. Effective 22 November 2026.
-
-Gymneat is a gym tracker made by serrant. This policy covers the Android app and the web version.
-
-## The short version
-
 Gymneat does not collect, send or share any of your data. Everything you enter stays on your device.
 
 ## What the app stores
@@ -46,7 +40,3 @@ Gymneat collects no data from anyone, including children.
 ## Changes
 
 If this policy changes, the new version will be published here with a new date.
-
-## Contact
-
-Questions about this policy: https://github.com/serrant/gymneat/issues

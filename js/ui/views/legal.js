@@ -1,6 +1,6 @@
 // Text sheets opened from the notice line in Trends → Data:
-// - Licences ("GPL-3.0"): with the copyright line it forms the GPL's "Appropriate Legal Notices" (§0, §5(d)),
-//   and it carries the notices of the open-source parts the app ships (THIRD-PARTY-NOTICES.txt).
+// - Licences ("GPL-3.0"): the no-warranty statement and the GPL text, plus the notices of the
+//   open-source parts the app ships (THIRD-PARTY-NOTICES.txt), which their licences require.
 // - Privacy: PRIVACY.md, the privacy policy Google Play requires inside the app.
 
 import { esc } from '../../lib/util.js';
