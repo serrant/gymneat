@@ -34,7 +34,7 @@ All Android-only calls are in `js/native.js`. It reaches the plugins through Cap
 | Android Studio and the Android SDK | Building, running and signing the Android app. Targets Android 16 (API level 36), as Google Play requires. |
 | Gradle 9.5.1 | Android's build system. Pinned: Gradle 8 can't run on Android Studio's Java 25, and Capacitor's Android plugin breaks on Gradle 9.6+. |
 | Java 21 | Required by the Capacitor plugins. Gradle downloads it (toolchain resolver in `android/settings.gradle`). |
-| Python and Playwright | Generating the Play Store images (`store/make.py`) and the app icon in every size (`store/make_icons.py`). |
+| Python and Playwright | Generating the Play Store images (`store/make_listing.py`) and the app icon in every size (`store/make_icons.py`). |
 | Python's `http.server` | Previewing the web app locally (`npm start`). |
 
 ## How the pieces connect

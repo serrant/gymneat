@@ -1,4 +1,4 @@
-<!-- Images come from store/make.py; each has a -dark twin shown to readers using GitHub in dark mode. -->
+<!-- Images come from store/make_listing.py; each has a -dark twin shown to readers using GitHub in dark mode. -->
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="store/feature-graphic-dark.png"><img src="store/feature-graphic.png" alt="Gymneat, a minimal gym tracker"></picture>
 </p>

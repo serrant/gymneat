@@ -42,7 +42,7 @@ What each file and folder is for: **read [docs/project-structure.md](docs/projec
 - **One rest time per exercise**, used between sets and before the next exercise.
 - **Plan's week strip shows exercise counts, not dates**, because the plan repeats every week.
 - **Exercise figures are drawn in code** (2D stick figures in the app's colours), not images: no licensing questions, consistent style, theme-aware. A new built-in exercise needs an entry in `EXERCISE_FIGURES` (a test enforces it); custom exercises use the generic figure. Figures hold still when the phone asks for reduced motion.
-- **The app icon is drawn in code** in `store/make_icons.py`: a dumbbell with a tick above the bar, white on the accent blue. Change it there and run the script; it writes every launcher size, the themed (monochrome) icon, the notification icon, the splash icon and `store/icon.png`. Never put Capacitor's or any other project's images back.
+- **The app icon is drawn in code** in `store/make_icons.py`: a loaded dumbbell seen from the side, plates growing towards the middle, white on the accent blue. Change it there and run the script; it writes every launcher size, the themed (monochrome) icon, the notification icon, the splash icon, `store/icon.png` and the web version's `icons/`. Everything it writes is generated: never edit an icon by hand, and never put Capacitor's or any other project's images back. The mark is scaled about the centre to suit where it is shown (`MASK_SCALE` where the system crops it, `WEB_SCALE` where it keeps its own rounded square).
 - **Rest alerts:** leaving the app during a rest schedules a "Rest over" notification, cleared on return. The first session asks for notification permission, and the app offers once to allow exact alarms (Android 14+ has them off; without them an alert can be a minute late).
 
 ## Pitfalls already hit
@@ -59,4 +59,4 @@ What each file and folder is for: **read [docs/project-structure.md](docs/projec
 1. Bump `VERSION` in `js/version.js` (format `MAJOR.MINOR`, started at `1.0`: bump MINOR for every release, MAJOR for big changes). It is the only place the version is set: `android/app/build.gradle` reads it as `versionName` and derives `versionCode` as MAJOR × 1000 + MINOR, so every upload to Google Play needs a higher `VERSION`.
 2. Update the README, `docs/data.md` or `docs/tech.md` if behaviour, the data format or the tools changed.
 3. Run `npm run sync`, then build a signed bundle (`.aab`) in Android Studio.
-4. Store images in `store/` show real screens; regenerate them with `store/make.py` when the interface changes.
+4. Store images in `store/` show real screens; regenerate them with `store/make_listing.py` when the interface changes.

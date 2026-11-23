@@ -1,7 +1,7 @@
 """Builds the store images in this folder from the real app.
 
-    python3 store/make.py                 # light theme (default)
-    python3 store/make.py --theme dark
+    python3 store/make_listing.py                 # light theme (default)
+    python3 store/make_listing.py --theme dark
 
 Needs Python 3 and Playwright, used only by this script, not by the app:
     pip install playwright && playwright install chromium

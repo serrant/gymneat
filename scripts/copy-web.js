@@ -13,7 +13,9 @@ mkdirSync(www);
 // LICENSE.txt, THIRD-PARTY-NOTICES.txt and fonts/OFL.txt travel with the app, as the licences require,
 // and PRIVACY.md, as Google Play requires (the Licences and Privacy sheets in Trends → Data show them).
 // Keep the extensions: Capacitor answers extensionless paths with index.html.
-for (const p of ['index.html', 'css', 'js', 'fonts', 'LICENSE.txt', 'THIRD-PARTY-NOTICES.txt', 'PRIVACY.md']) cpSync(join(root, p), join(www, p), { recursive: true });
+// icons/ and manifest.json are the web version's tab and home-screen icons; they travel too so that
+// the links in index.html resolve inside the app instead of asking its local server for missing files.
+for (const p of ['index.html', 'css', 'js', 'fonts', 'icons', 'manifest.json', 'LICENSE.txt', 'THIRD-PARTY-NOTICES.txt', 'PRIVACY.md']) cpSync(join(root, p), join(www, p), { recursive: true });
 cpSync(join(root, 'node_modules/@capacitor/core/dist/capacitor.js'), join(www, 'capacitor.js'));
 
 // Classic scripts run before modules, so window.Capacitor is complete when main.js starts.
